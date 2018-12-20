@@ -25,6 +25,7 @@ function HandleNote(note) {
 function KeepTrackOfPlayingNotes(note) {
   if (note instanceof NoteOn && !playingNotes.includes(note.number)) {
     playingNotes.push(note.number)
+    if (sustaining) { susNotes.push(note.number) }
   }
   else if (note instanceof NoteOff && playingNotes.includes(note.number)) {
     playingNotes.splice(list.indexOf(note.number), 1)
