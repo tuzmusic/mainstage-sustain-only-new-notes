@@ -17,6 +17,8 @@ function HandleNote(note) {
   KeepTrackOfPlayingNotes(note) 
   if (sustaining) {
     PlayNoteIfNew(note)
+  } else {
+    note.send()
   }
 }
 
