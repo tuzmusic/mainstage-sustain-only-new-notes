@@ -5,7 +5,7 @@ var sustaining = false;
 function HandleMIDI(event) {
   
   if (event instanceof Note) {
-    HandleNote(e)
+    HandleNote(event)
   } else {
     HandleSustain(event)
     event.send()
