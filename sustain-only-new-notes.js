@@ -28,7 +28,7 @@ function KeepTrackOfPlayingNotes(note) {
     if (sustaining) { susNotes.push(note.number) }
   }
   else if (note instanceof NoteOff && playingNotes.includes(note.number)) {
-    playingNotes.splice(list.indexOf(note.number), 1)
+    playingNotes.splice(playingNotes.indexOf(note.number), 1)
   }
 }
 
