@@ -33,9 +33,11 @@ function KeepTrackOfPlayingNotes(note) {
 }
 
 function PlayNoteIfNew(note) {
-  if (!susNotes.includes(note.number)) {
+  if (note instanceof NoteOn && !susNotes.includes(note.number)) {
     susNotes.push(note.number);
     note.send();
+  } else if (note instanceof NoteOff) {
+     note.send()
   }
 }
 
